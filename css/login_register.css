@@ -1,0 +1,125 @@
+/* Mise en page de ma page */
+body {
+    background: #e2e2e2;
+    overflow-x: hidden;
+}
+/* ------------------------------------------------------------ */
+
+/* MISE EN PAGE DU FORMULAIRE D'INSCRIPTION ET DE CONNEXION */
+svg{
+    position:fixed;
+    margin: auto;
+}
+.register, .login, .ajouter, .modifier{
+    position:relative;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 15px;
+    display:block;
+    width:500px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+}
+.register:hover, .login:hover, .ajouter:hover, .modifier:hover {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;}
+.register h1, .login h1, .ajouter h1, .modifier h1{
+    padding:40px;
+    font-weight:lighter;
+    text-transform:uppercase;
+    color:#414141;
+    font-size: 25px;
+    text-align: center;
+}
+#input, textarea{
+    display:block;
+    height:50px;
+    width:90%;
+    margin:0px auto;
+    padding-top:15px;
+    border:none;
+}
+form .information {
+    margin: 0px auto;
+    width: 90%;
+}
+form .texte {
+    padding-bottom: 15px;
+    padding-top: 5px;
+    font-size: 13px;
+    padding-left: 10px;
+    font-family: inherit;
+}
+form .titre {
+    font-family: cursive;
+    font-size: 13px;
+    color: darkslateblue;
+}
+#input::placeholder, textarea::placeholder {
+    -webkit-transform:translateY(0px);
+    transform:translateY(0px);
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+#input:hover, #input:focus, #input:active:focus,
+textarea:hover,textarea:focus,textarea:active:focus {
+    border:none;
+    color:#7853A8;
+    outline:none;
+    border-bottom:1px solid #7853A8;
+}
+#input:active:focus::placeholder, #input:hover::placeholder, #input:focus::placeholder,
+textarea:active:focus::placeholder, textarea:hover::placeholder, textarea:focus::placeholder {
+    color:#7853A8;
+    position:relative;
+    -webkit-transform:translateY(-15px);
+    transform:translateY(-15px);
+}
+
+.nom, .prenom, .pseudo, .mail, .mdp{
+    border-bottom:1px solid rgba(0, 0, 0, 0.14);
+    padding-left:20px;
+    font-family: 'Open Sans', sans-serif;
+    color:#858585;
+}
+button{
+    cursor:pointer; 
+    width:100%;
+    height:60px;
+    margin-top:10px;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+    text-transform:uppercase;
+    color:#fff;
+    background:#009EDC;
+}
+button:hover {
+    background:#009EDC;
+}
+
+
+
+
+/* Mise en page du formulaire au format téléphone*/
+@media all and (max-width:590px) {
+    .register, .login, .ajouter, .modifier {
+        width: 400px;
+    }
+    .register h1, .login h1, .ajouter h1, .modifier h1 {
+        font-size: 27px;
+        padding: 30px;
+    }
+}
+
+
+
+
+/* MISE EN FORME DES MESSAGES D'ERREURS */
+.errors, .success {
+    text-align: center;
+    font-size: 13px;
+    margin: 0 10%;
+    font-style: italic;
+    color: #E64F48;
+    padding-bottom: 15px;
+}

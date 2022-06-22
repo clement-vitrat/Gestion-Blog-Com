@@ -1,0 +1,331 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+/* Mise en page des différentes couleurs de mes pages */
+:root {
+    --ecriture: #fff;
+    --background: #111;
+}
+
+/* Mise en page de ma page */
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Animations pour tout le texte de la page */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+/* Mise en page de roulette */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    background: #00B59C;
+    border-radius: 3rem;
+}
+body {
+    background: #fff;
+    overflow-x: hidden;
+}
+/* ------------------------------------------------------------ */
+
+
+
+/* MISE EN PAGE DE MON MENU */
+nav {
+    background: var(--background);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0.2px 1px 10px grey;
+}
+nav:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+/* Différentes caractéristiques du Titre de mon menu */
+nav .logo a {
+    float: left;
+    color: var(--ecriture);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+/* Ajout de couleur sur une partie de mon Titre */
+nav strong {
+    color: #00B59C;
+}
+nav ul {
+    float: right;
+    margin-right: 40px;
+    list-style: none;
+    position: relative;
+}
+nav ul li {
+   float: left;
+   display: inline-block;
+   background: var(--background);
+   margin: 0 5px;
+}
+nav ul li a {
+    color: var(--ecriture);
+    line-height: 70px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+nav ul li a .fa-newspaper {
+    color: #fff;
+}
+/* Mise en page du menu active et du menu au contact de la souris */
+nav ul li a:hover,
+nav ul li a.active,
+nav ul li label.active,
+label .active {
+    border-radius: 5px;
+    background: #00B59C;
+    color: #fff;
+    width: 32%;
+}
+.show,.icon,input {
+    display: none;
+}
+#btn {display: none;}
+.fa-plus {
+    font-size: 15px;
+    margin-left: 40px;
+}
+/* RESPONSIVE */
+/* Mise en page du bouton pour le format Smartphone */
+@media all and (max-width:450px) {
+    nav .logo a {
+        font-size: 24px;
+    }
+}
+/* Mise en page pour tablette */
+@media screen and (min-width:950px) and (max-width:1056px) {
+    nav .logo a {
+        padding-left: 40px;
+        width: 40%;
+    }
+    nav ul {
+        margin-right: 10px;
+    }
+    nav lu li a {
+        line-height: 70px;
+        padding: 7px 11px;
+    }
+}
+/* Mise en page pour le bouton du Menu */
+@media all and (max-width:1057px) {
+    nav ul {
+        margin-right: 0px;
+        width: 100%;
+    }
+    nav .logo a {
+        padding-left: 40px;
+        width: 100%;
+    }
+    .show + a, ul {
+        display: none;
+    }
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+    .show {
+        display: block;
+        color: var(--ecriture);
+        font-size: 18px;
+        padding: 0 15px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+    .show-active {
+        color: #00B59C;
+        font-weight: bold;
+    }
+    label .active {
+        color: #00B59C;
+    }
+    .icon {
+        display: block;
+        color: #00B59C;
+        position: absolute;
+        top: 0;
+        right: 25px;
+        line-height: 70px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+    [id^=btn]:checked + ul {
+        display: block;
+    }
+    span.cancel:before {
+        content: '\f00d';
+    }
+}
+/* ------------------------------------------------------------ */
+
+
+/* MISE EN FORME DU TABLEAU POUR AFFICHER LES DIFFERENTS ARTICLES AVEC LE NOM DU CREATEUR */
+table {
+    border-collapse: separate;
+    background:#fff;
+    border-radius:5px;
+    margin: 15px auto;
+    box-shadow :0px 0px 5px rgba(0,0,0,0.6) ;
+    table-layout : fixed;
+    overflow-x: auto;
+}  
+thead {
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+thead th {
+    font-family: 'Playfair Display SC ';
+    font-size:20px;
+    font-weight:600;
+    color: #2d2d2d;
+    padding: 5px;
+    text-align: left;
+    background-image :(linear-gradient(#646f7f, #4a5564));
+}  
+tbody tr td {
+    font-family: 'Playfair Display SC ', sans-serif;
+    font-weight:400;
+    color:#5f6062;
+    font-size:14px;
+    padding:5px 10px 5px 2px;
+    border-bottom: 1px solid #e0e0e0;
+    max-width: 310px;
+}
+tbody:hover > tr td {opacity : 0.6;}  
+tbody:hover > tr:hover td {
+    text-shadow : none;
+    color:rgb(0, 0, 0);
+    opacity :1.0;
+    background-color: rgb(255, 246, 239);
+}
+tbody .commentaire {
+    font-style: italic;
+    font-family: monospace;
+} 
+caption {
+    font-family: 'Playfair Display SC ';
+    font-size:30px;
+    margin : 70px 0px 15px 0px;
+    font-weight: bold;
+}
+.fa-pen-to-square {
+    text-decoration: none;
+    color: #5b5bff;
+}
+.fa-pen-to-square:hover {   
+    color: #009edc;
+}
+
+@media all and (max-width: 920px) {
+    thead th {font-size: 13px;}
+    tbody tr td {font-size: 12px; max-width: 200px;}
+}
+@media all and (max-width: 753px) {
+    thead th {font-size: 13px;}
+    tbody tr td {font-size: 11px; max-width: 180px;}
+}
+@media all and (max-width: 735px) {
+    thead th {font-size: 13px;}
+    tbody tr td {font-size: 11px; max-width: 171px;}
+}
+@media all and (max-width: 708px) {
+    thead th {font-size: 12px;}
+    tbody tr td {font-size: 10px; max-width: 165px;}
+}
+@media all and (max-width: 652px) {
+    thead th {font-size: 11px;}
+    tbody tr td {font-size: 9px; max-width: 150px;}
+}
+@media all and (max-width: 604px) {
+    thead th {font-size: 10px;}
+    tbody tr td {font-size: 8px; }
+}
+@media all and (max-width: 546px) {
+    thead th {font-size: 9px;}
+    tbody tr td {font-size: 7px;}
+}
+@media all and (max-width: 489px) {
+    thead th {font-size: 10px;}
+    tbody tr td {font-size: 8px;}
+}
+@media all and (max-width: 458px) {
+    thead th {font-size: 10px;}
+    tbody tr td {font-size: 7px;}
+}
+@media all and (max-width: 430px) {
+    thead th {font-size: 8px;}
+    tbody tr td {font-size: 7px;}
+    caption {font-size: 19px;}
+}
+/* ------------------------------------------------------------ */
+
+
+/* MISE EN FORME DU TEXTE POUR AJOUT ARTICLE SUR LA PAGE ACCUEIL */
+.ajart {
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+.ajart p a {
+    text-decoration: none;
+    color: rgb(150, 76, 23);
+    cursor: pointer;
+}
+.ajart p a:hover {
+    color: chocolate;
+}
+/* ------------------------------------------------------------ */
+
+
+/* MISE EN PAGE DU BOUTON POUR MODIFIER */
+.fa-solid, .fas {
+    text-decoration: none;
+    color: #5f6062;
+}
+.fa-solid:hover, .fas:hover {
+    color: #00B59C;
+}
+/* ------------------------------------------------------------ */
+
+
+/* MISE EN PAGE DE L'AFFICHE POUR DIRE QUI EST CONNECTE ou DECONNECTE */
+.connecte, .deconnecte {
+    margin: 80px 0px 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+.connecte span {color: rgb(150, 76, 23);}
+.connecte span:hover {color: chocolate;}
+/* ------------------------------------------------------------ */
